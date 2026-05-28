@@ -89,7 +89,7 @@ export default function BookingConfirmPage() {
               <div className="lg:col-span-3 space-y-6">
                 {/* Booking Details */}
                 <div className="bg-surface border border-border rounded-xl p-6">
-                  <h3 className="font-heading font-semibold mb-4">Detail Booking</h3>
+                  <h3 className="font-heading font-semibold mb-4">{t("booking_details")}</h3>
                   <div className="space-y-3 text-sm">
                     <div className="flex items-start gap-2"><span className="text-text-secondary w-24 shrink-0">Lokasi:</span><span className="text-text-primary font-medium">JayField Sudirman</span></div>
                     <div className="flex items-start gap-2"><span className="text-text-secondary w-24 shrink-0">Lapangan:</span><span className="text-text-primary font-medium">Lapangan 1 (Indoor, Vinyl)</span></div>
@@ -157,7 +157,7 @@ export default function BookingConfirmPage() {
                 <div className="bg-surface border border-border rounded-xl p-6">
                   <h3 className="font-heading font-semibold mb-3">{t("promo_code")}</h3>
                   <div className="flex gap-2">
-                    <input type="text" value={promoCode} onChange={(e) => setPromoCode(e.target.value)} placeholder="Masukkan kode promo" className="flex-1 h-11 px-4 rounded-lg border border-border bg-surface focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary text-sm" />
+                    <input type="text" value={promoCode} onChange={(e) => setPromoCode(e.target.value)} placeholder={t("promo_input_placeholder")} className="flex-1 h-11 px-4 rounded-lg border border-border bg-surface focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary text-sm" />
                     <Button variant="default" size="default" onClick={handleApplyPromo}>{t("apply_promo")}</Button>
                   </div>
                   {promoApplied && <p className="mt-2 text-sm text-accent">✓ {t("promo_success")} Diskon 10%</p>}
@@ -167,7 +167,7 @@ export default function BookingConfirmPage() {
               {/* Right Panel - Summary */}
               <div className="lg:col-span-2">
                 <div className="bg-surface border border-border rounded-xl p-6 sticky top-[90px]">
-                  <h3 className="font-heading font-semibold mb-4">Ringkasan Pembayaran</h3>
+                  <h3 className="font-heading font-semibold mb-4">{t("payment_summary")}</h3>
                   <div className="space-y-2 text-sm">
                     <div className="flex justify-between"><span className="text-text-secondary">{t("subtotal")} ({slots.length} jam)</span><span>{formatPrice(total)}</span></div>
                     {promoApplied && <div className="flex justify-between text-accent"><span>Promo JAYFIELD10 (10%)</span><span>-{formatPrice(Math.ceil(total * 0.1))}</span></div>}
@@ -209,7 +209,7 @@ export default function BookingConfirmPage() {
             <div className="mx-auto w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mb-4">
               <CheckCircle className="h-8 w-8 text-accent" />
             </div>
-            <h2 className="text-2xl font-heading font-bold text-text-primary mb-2">Booking Berhasil Dibuat!</h2>
+            <h2 className="text-2xl font-heading font-bold text-text-primary mb-2">{t("booking_success")}</h2>
             <p className="text-text-secondary mb-6">{t("transfer_to")}:</p>
 
             {/* Payment Details */}

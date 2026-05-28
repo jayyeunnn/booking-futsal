@@ -116,7 +116,7 @@ export default function BookingSelectSchedulePage() {
           </nav>
 
           <Link href={pathname.split("/").slice(0, -1).join("/")} className="inline-flex items-center gap-1.5 text-sm text-text-secondary hover:text-primary mb-4 transition-colors">
-            <ArrowLeft className="h-4 w-4" /> Kembali
+            <ArrowLeft className="h-4 w-4" /> {t("back")}
           </Link>
 
           <h1 className="text-3xl font-heading font-bold text-text-primary mb-6">{t("select_schedule")}</h1>
@@ -158,9 +158,7 @@ export default function BookingSelectSchedulePage() {
 
               {/* Time Slots */}
               <div className="bg-surface border border-border rounded-xl p-5">
-                <h3 className="font-heading font-semibold mb-4">
-                  Jadwal: {selectedDate.toLocaleDateString("id-ID", { weekday: "long", day: "numeric", month: "long", year: "numeric" })}
-                </h3>
+                <h3 className="font-heading font-semibold mb-4">{t("schedule_for")}: {selectedDate.toLocaleDateString(locale === "en" ? "en-US" : "id-ID", { weekday: "long", day: "numeric", month: "long", year: "numeric" })}</h3>
 
                 {/* Legend */}
                 <div className="flex gap-4 mb-4 text-xs text-text-secondary">
@@ -210,7 +208,7 @@ export default function BookingSelectSchedulePage() {
             {/* Right: Summary (Sticky) */}
             <div className="lg:col-span-1">
               <div className="bg-surface border border-border rounded-xl p-5 sticky top-[90px]">
-                <h3 className="font-heading font-semibold mb-4">Ringkasan</h3>
+                <h3 className="font-heading font-semibold mb-4">{t("summary")}</h3>
 
                 {selectedSlots.length > 0 ? (
                   <>
@@ -248,11 +246,11 @@ export default function BookingSelectSchedulePage() {
                     </label>
 
                     <Button variant="cta" className="w-full h-12 text-base font-semibold" onClick={handleConfirm}>
-                      Lanjut ke Pembayaran →
+                      {t("continue_to_payment")} →
                     </Button>
                   </>
                 ) : (
-                  <p className="text-sm text-text-secondary">Pilih waktu pada jadwal di samping untuk melanjutkan booking.</p>
+                  <p className="text-sm text-text-secondary">{t("select_time_hint")}</p>
                 )}
               </div>
             </div>

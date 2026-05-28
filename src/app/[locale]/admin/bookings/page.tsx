@@ -42,10 +42,10 @@ export default function AdminBookingsPage() {
         <div className="flex flex-col sm:flex-row gap-3">
           <div className="relative flex-1">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-text-secondary" />
-            <input type="text" placeholder="Cari nama/ID..." value={search} onChange={(e) => setSearch(e.target.value)} className="w-full h-10 pl-10 pr-4 rounded-lg border border-border bg-surface text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary" />
+            <input type="text" placeholder={t("search_user")} value={search} onChange={(e) => setSearch(e.target.value)} className="w-full h-10 pl-10 pr-4 rounded-lg border border-border bg-surface text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary" />
           </div>
           <select value={statusFilter} onChange={(e) => setStatusFilter(e.target.value)} className="h-10 px-3 rounded-lg border border-border bg-surface text-sm focus:outline-none focus:ring-2 focus:ring-primary/20">
-            <option value="ALL">Semua Status</option>
+            <option value="ALL">{t("all_status")}</option>
             <option value="PENDING_CONFIRMATION">Pending</option>
             <option value="CONFIRMED">Confirmed</option>
             <option value="COMPLETED">Completed</option>
@@ -99,7 +99,7 @@ export default function AdminBookingsPage() {
         </div>
 
         {filtered.length === 0 && (
-          <div className="text-center py-8 text-text-secondary">Tidak ada booking ditemukan.</div>
+          <div className="text-center py-8 text-text-secondary">{t("no_bookings_found")}</div>
         )}
       </div>
     </div>

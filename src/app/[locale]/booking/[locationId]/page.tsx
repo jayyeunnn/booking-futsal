@@ -69,7 +69,7 @@ export default function BookingSelectCourtPage() {
             className="inline-flex items-center gap-1.5 text-sm text-text-secondary hover:text-primary mb-4 transition-colors"
           >
             <ArrowLeft className="h-4 w-4" />
-            Kembali ke Pilih Lokasi
+            {t("back_to_locations")}
           </Link>
 
           <h1 className="text-3xl font-heading font-bold text-text-primary mb-6">
@@ -88,7 +88,7 @@ export default function BookingSelectCourtPage() {
                     : "bg-surface text-text-secondary border border-border hover:bg-muted"
                 }`}
               >
-                {type === "ALL" ? "Semua" : type === "INDOOR" ? tLanding("indoor") : tLanding("outdoor")}
+                {type === "ALL" ? t("all") : type === "INDOOR" ? tLanding("indoor") : tLanding("outdoor")}
               </button>
             ))}
           </div>
@@ -123,7 +123,7 @@ export default function BookingSelectCourtPage() {
                     ))}
                   </div>
                   <div className="mt-3 pt-3 border-t border-border">
-                    <p className="text-sm text-text-secondary">Mulai dari</p>
+                    <p className="text-sm text-text-secondary">{t("starting_from")}</p>
                     <p className="text-lg font-bold text-primary">
                       {formatPrice(court.priceFrom)}
                       <span className="text-sm font-normal text-text-secondary">/jam</span>
@@ -136,7 +136,7 @@ export default function BookingSelectCourtPage() {
 
           {filteredCourts.length === 0 && (
             <div className="text-center py-12 text-text-secondary">
-              Tidak ada lapangan {filter.toLowerCase()} di lokasi ini.
+              {t("no_courts_found")}
             </div>
           )}
         </div>

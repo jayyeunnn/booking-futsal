@@ -85,7 +85,7 @@ export default function BookingSelectLocationPage() {
             <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-text-secondary" />
             <input
               type="text"
-              placeholder="Cari lokasi..."
+              placeholder={t("search_location")}
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               className="w-full h-12 pl-12 pr-4 rounded-xl border border-border bg-surface text-text-primary placeholder:text-text-secondary/50 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors"
@@ -132,7 +132,7 @@ export default function BookingSelectLocationPage() {
                       </div>
                     </div>
                     <div className="mt-4 flex items-center gap-1 text-sm font-medium text-primary">
-                      Pilih Lokasi Ini <ArrowRight className="h-4 w-4" />
+                      {t("select_this_location")} <ArrowRight className="h-4 w-4" />
                     </div>
                   </div>
                 </div>
@@ -141,7 +141,7 @@ export default function BookingSelectLocationPage() {
 
             {filteredLocations.length === 0 && (
               <div className="text-center py-12 text-text-secondary">
-                Tidak ada lokasi ditemukan untuk &quot;{search}&quot;
+                {t("no_locations_found")} &quot;{search}&quot;
               </div>
             )}
           </div>

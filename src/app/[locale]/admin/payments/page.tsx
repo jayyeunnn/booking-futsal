@@ -63,7 +63,7 @@ export default function AdminPaymentsPage() {
                   className="w-24 h-24 bg-muted border border-border rounded-lg flex flex-col items-center justify-center gap-1 hover:border-primary/50 transition-colors cursor-pointer"
                 >
                   <Image className="h-6 w-6 text-text-secondary" />
-                  <span className="text-xs text-text-secondary">Lihat Bukti</span>
+                  <span className="text-xs text-text-secondary">{t("view_proof")}</span>
                 </button>
                 <div className="flex gap-2">
                   <button className="flex items-center gap-1.5 bg-accent hover:bg-accent/80 text-white text-sm font-medium px-4 py-2 rounded-lg transition-colors">
@@ -86,7 +86,7 @@ export default function AdminPaymentsPage() {
         <div className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center p-4" onClick={() => setViewProof(null)}>
           <div className="bg-surface rounded-xl p-4 max-w-md w-full" onClick={(e) => e.stopPropagation()}>
             <div className="flex items-center justify-between mb-3">
-              <h3 className="font-heading font-semibold">Bukti Transfer</h3>
+              <h3 className="font-heading font-semibold">{t("proof_of_transfer")}</h3>
               <button onClick={() => setViewProof(null)} className="text-text-secondary hover:text-text-primary">✕</button>
             </div>
             <div className="aspect-[3/4] bg-muted rounded-lg flex items-center justify-center">
