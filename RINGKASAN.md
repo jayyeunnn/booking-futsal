@@ -95,6 +95,59 @@
 
 ---
 
+## API yang Digunakan (Komunikasi antara Website dan Server)
+
+API adalah "jembatan" yang menghubungkan tampilan website dengan data di server. Berikut semua API yang ada:
+
+### 🔐 Authentication (Login & Registrasi)
+
+| API | Fungsi |
+|-----|--------|
+| `POST /api/auth/register` | Mendaftarkan akun baru (nama, email, password) |
+| `POST /api/auth/login` | Masuk ke akun yang sudah terdaftar |
+| `POST /api/auth/forgot-password` | Minta link reset password via email |
+| `POST /api/auth/reset-password` | Ganti password dengan link yang dikirim ke email |
+| `GET /api/auth/session` | Cek siapa yang sedang login |
+
+### 📍 Lokasi & Lapangan
+
+| API | Fungsi |
+|-----|--------|
+| `GET /api/locations` | Ambil daftar semua lokasi JayField |
+| `GET /api/courts?locationId=xxx` | Ambil daftar lapangan di lokasi tertentu |
+| `GET /api/courts/[id]/availability?date=xxx` | Cek jadwal kosong/terisi untuk tanggal tertentu |
+
+### 📅 Booking
+
+| API | Fungsi |
+|-----|--------|
+| `POST /api/bookings` | Buat booking baru (pilih lapangan, jam, tipe bayar) |
+| `GET /api/bookings` | Lihat daftar booking milik user yang login |
+
+### 💳 Pembayaran
+
+| API | Fungsi |
+|-----|--------|
+| `GET /api/payments` | Ambil daftar metode pembayaran yang tersedia (BCA, Dana, dll) |
+| `GET /api/payments/[bookingId]` | Lihat detail pembayaran untuk booking tertentu |
+| `POST /api/payments/upload-proof` | Upload bukti transfer setelah bayar |
+
+### 🎫 Promo
+
+| API | Fungsi |
+|-----|--------|
+| `POST /api/promos/validate` | Cek apakah kode promo valid dan berapa diskonnya |
+
+### 👨‍💼 Admin — Booking & Pembayaran
+
+| API | Fungsi |
+|-----|--------|
+| `GET /api/admin/bookings` | Admin lihat semua booking dari semua user |
+| `PUT /api/admin/payments/[id]/confirm` | Admin konfirmasi pembayaran (bukti transfer valid) |
+| `PUT /api/admin/payments/[id]/reject` | Admin tolak pembayaran (bukti tidak valid) |
+
+---
+
 ## Tahapan Development
 
 | Phase | Isi | Status |
